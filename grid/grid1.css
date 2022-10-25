@@ -38,10 +38,12 @@ section{
 
 .container {
     display: grid;
-    width: 100%;
-    height: 100%;
+    height: 100vh;
+    /*DEFINES THERE ARE 2 COLUMNS*/
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: 100px 350px 100px;
-    /* grid-template-rows: auto 1fr auto; */
+/*     grid-template-rows: 100px 350px 100px; */
+    
+    /*DEFINES THERE ARE 3 ROWS*/
+    grid-template-rows: 100px minmax(200px, 1fr) 100px;
     grid-gap: 10px;
 }
