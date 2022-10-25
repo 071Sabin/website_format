@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ccc;
+    ;
+}
+
+nav {
+    padding: 1rem;
+    background-color: black;
+    /*only one item so flex-end*/
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.ham-menu {
+    height: 50px;
+    width: 50px;
+    /* background-color: yellow; */
+    position: relative;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.ham-bar {
+    width: 70%;
+    background-color: white;
+    height: 4px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 25px;
+    transform: translate(-50%, -50%);
+    transition: transform 0.5s, opacity .5s, top .6s;
+}
+
+.bar-top {
+    top: 25%;
+}
+
+.bar-bottom {
+    top: 75%;
+}
+
+.ham-menu.active .bar-top {
+    transform: translate(-50%, -50%) rotate(-315deg);
+    top: 50%;
+}
+
+.ham-menu.active .bar-mid {
+    opacity: 0;
+}
+
+.ham-menu.active .bar-bottom {
+    transform: translate(-50%, -50%) rotate(-225deg);
+    top: 50%;
+}
+
+.off-screen-menu {
+    position: fixed;
+    top: 0;
+    right: -25%;
+    background-color: #222;
+    height: 100vh;
+    width: 25%;
+    transition: right .5s;
+}
+
+.off-screen-menu.active {
+    right: 0;
+}
